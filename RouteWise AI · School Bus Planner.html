@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)https://ai-school-bus-route.hatchable.site/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>window.__HATCHABLE__&&(window.__HATCHABLE__.primaryOrigin="https://ai-school-bus-route.hatchable.site");</script>
+<script>window.__HATCHABLE__={"slug":"ai-school-bus-route","api":"/api","primaryOrigin":"https://ai-school-bus-route.hatchable.site"};</script><script src="./RouteWise AI · School Bus Planner_files/config.js.download"></script><script src="./RouteWise AI · School Bus Planner_files/badge.js.download" defer=""></script><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RouteWise AI · School Bus Planner</title><link rel="stylesheet" href="./RouteWise AI · School Bus Planner_files/styles.css"></head>
+<body><div class="app">
+<header><div class="brand"><span class="logo">✦</span><div><b>RouteWise AI</b><small>School Transport Command Center</small></div></div>
+<div class="top-actions"><span class="live"><i></i> Planning mode</span><button class="ghost" id="reset">Reset</button></div></header>
+<main>
+<section class="hero"><div><p class="eyebrow">AI-POWERED TRANSPORT</p><h1>Build safer routes.<br><span>In fewer clicks.</span></h1><p class="sub">Turn student addresses into balanced bus routes with AI-assisted clustering, capacity checks, and explainable planning.</p></div>
+<div class="hero-card"><div class="mini-label">TODAY'S NETWORK</div><strong>6 buses · 84 students</strong><div class="progress"><span></span></div><small>92% planned efficiently</small></div></section>
+<section class="workspace">
+<aside class="panel controls"><div class="panel-title"><div><span class="kicker">01</span><h2>Plan a route</h2></div><span class="pill">AI READY</span></div>
+<label>School campus<select id="campus"><option>Greenfield International School</option><option>Oakridge Campus</option></select></label>
+<div class="grid2"><label>Students<input id="students" type="number" value="84" min="1"></label><label>Bus capacity<input id="capacity" type="number" value="32" min="1"></label></div>
+<label>Planning priority<select id="priority"><option value="balanced">Balanced</option><option value="time">Minimize travel time</option><option value="safety">Maximize safety buffer</option></select></label>
+<div class="chips"><button class="chip active" data-mode="cluster">Cluster stops</button><button class="chip" data-mode="capacity">Balance capacity</button><button class="chip" data-mode="safety">Safety buffers</button></div>
+<button class="primary" id="optimize"><span>✦</span> Optimize with AI</button>
+<div class="ai-box" id="aiBox"><div class="ai-icon">✦</div><div><b>AI planning insight</b><p>Run optimization to generate a route explanation and suggested bus allocation.</p></div></div>
+</aside>
+<section class="panel map-panel"><div class="panel-title"><div><span class="kicker">02</span><h2>Route canvas</h2></div><div class="legend"><span><i class="dot school"></i>School</span><span><i class="dot bus"></i>Bus stops</span></div></div>
+<div class="map" id="map"><svg viewBox="0 0 900 480" preserveAspectRatio="none">
+<path class="road" d="M0 120 C180 90 260 170 420 130 S690 80 900 140 M0 300 C180 260 260 360 430 300 S700 250 900 330 M130 0 C160 150 130 270 190 480 M410 0 C380 150 470 290 430 480 M700 0 C650 150 760 280 700 480"></path>
+<path class="route r1" d="M450 240 C360 200 300 150 210 115 S100 90 70 120"></path><path class="route r2" d="M450 240 C520 190 600 150 700 105 S800 120 850 80"></path><path class="route r3" d="M450 240 C370 285 280 325 190 355 S100 360 65 410"></path><path class="route r4" d="M450 240 C560 290 620 330 730 360 S820 400 865 440"></path>
+</svg><div class="school-pin">S</div>
+<div class="stop s1">1</div><div class="stop s2">2</div><div class="stop s3">3</div><div class="stop s4">4</div><div class="stop s5">5</div><div class="stop s6">6</div><div class="map-label campus-label">GREENFIELD CAMPUS</div>
+<div class="map-toast" id="mapToast">AI route preview · 4 balanced clusters</div></div>
+<div class="route-summary"><div><small>RECOMMENDED</small><b id="busCount">4 buses</b></div><div><small>AVG. ROUTE</small><b id="routeTime">31 min</b></div><div><small>SAFETY BUFFER</small><b id="buffer">12 min</b></div><div><small>STOPS</small><b id="stopCount">24</b></div></div></section>
+</section>
+<section class="results"><div class="section-head"><div><span class="kicker">03</span><h2>Route plan</h2></div><button class="export" id="export">Export plan ↗</button></div>
+<div class="cards" id="cards"><article class="route-card">
+ <div class="route-top"><span class="bus-badge">🚌</span><span class="tag">BUS 1</span></div>
+ <h3>North Loop</h3><p>22 students · 6 pickup stops</p>
+ <div class="metric"><span>Estimated time</span><b>28 min</b></div>
+ <div class="metric"><span>Safety buffer</span><b>11 min</b></div></article><article class="route-card">
+ <div class="route-top"><span class="bus-badge">🚌</span><span class="tag">BUS 2</span></div>
+ <h3>East Loop</h3><p>21 students · 7 pickup stops</p>
+ <div class="metric"><span>Estimated time</span><b>34 min</b></div>
+ <div class="metric"><span>Safety buffer</span><b>12 min</b></div></article><article class="route-card">
+ <div class="route-top"><span class="bus-badge">🚌</span><span class="tag">BUS 3</span></div>
+ <h3>South Loop</h3><p>20 students · 6 pickup stops</p>
+ <div class="metric"><span>Estimated time</span><b>31 min</b></div>
+ <div class="metric"><span>Safety buffer</span><b>13 min</b></div></article><article class="route-card">
+ <div class="route-top"><span class="bus-badge">🚌</span><span class="tag">BUS 4</span></div>
+ <h3>West Loop</h3><p>21 students · 5 pickup stops</p>
+ <div class="metric"><span>Estimated time</span><b>30 min</b></div>
+ <div class="metric"><span>Safety buffer</span><b>12 min</b></div></article></div></section>
+</main><footer><span>RouteWise AI</span><span>Designed for school transport teams · Demo data only</span></footer>
+</div><script src="./RouteWise AI · School Bus Planner_files/app.js.download"></script><a id="hb-badge" href="https://hatchable.com/?utm_source=badge&amp;utm_medium=app&amp;utm_content=ai-school-bus-route" target="_blank" rel="noopener" style="position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom, 0px));z-index:2147483000;display:inline-flex;align-items:center;gap:6px;font:600 12px/1 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#f5efe2;background:#1f1b14;padding:7px 11px 7px 9px;border-radius:999px;border:1px solid rgba(255,255,255,.14);text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,.25);"><svg width="14" height="14" viewBox="51 70 410 410" aria-hidden="true" style="display:block;flex:none"><path d="M 256 80 C 160 80, 110 220, 110 320 C 110 420, 180 470, 256 470 C 332 470, 402 420, 402 320 C 402 220, 352 80, 256 80 Z" fill="#f5b840"></path><path d="M 115 280 L 180 320 L 240 260 L 290 310 L 340 250 L 398 305" fill="none" stroke="#1f1b14" stroke-width="40" stroke-linejoin="round" stroke-linecap="round"></path></svg>Built on Hatchable</a></body></html>
